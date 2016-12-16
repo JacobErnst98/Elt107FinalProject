@@ -1,15 +1,15 @@
-
+'symbol will rename the variable from b1 to rand
 symbol rand = b1 ' random number store for loading memory
-symbol value = b2 ' switch value 0-1-2-3
-symbol playerstep = b3 ' position of player in game
+symbol value = b2 ' switch value 0-1-2-3 which button to be pressed
+symbol playerstep = b3 ' position of player in game how far into sequence
 symbol freq = b4 ' sound variable
-symbol topstep = b5 ' number of steps in sequence
+symbol topstep = b5 ' number of steps in sequence/ level
 symbol counter = b6 ' general purpose counter
-symbol speed = b7 ' speed
+symbol speed = b7 ' speed was set as a constant
 
 init:
-let pinsB = %11111111 'set pins high
-random rand 'random memmory
+let pinsB = %11111111 'set pins high - turn off ssd/ turn on leds
+random rand 'random value
 if pin3 = 1 then preload 
 if pin2 = 1 then preload
 if pin1 = 1 then preload
@@ -22,17 +22,17 @@ low B.0
 low B.1
 low B.2
 low B.3  ' LEDs off
-for counter = 0 to 30 ' for..next loop
+for counter = 0 to 30 'allows enough time to select 30 values and store in memory
 let value = 0
 random rand ' get random number 0-255
 if rand > 180 then set0
 if rand > 120 then set1
 if rand > 60 then set2
-set3: let value = value + 1 '1+1+1 = 3
-set2: let value = value + 1 '1+1 = 2
-set1: let value = value + 1 '1
-set0: '0
-write counter,value ' save in data memory
+set3: let value = value + 1 'sets value vairable equal to 1+1+1 = 3
+set2: let value = value + 1 'sets value 1+1 = 2
+set1: let value = value + 1 ' sets value to 1
+set0: ' sets value to 0
+write counter,value ' save in data memory as an array
 next counter ' next loop
 
 low B.0
@@ -172,7 +172,7 @@ beep:
 high value ' switch on LED
 freq = value + 1 ' generate sound freq.
 freq = freq * 25
-sound C.4,(freq,speed) ' play sound
+sound C.4,(freq,speed) ' play sound for default amount of time, can be set
 low value ' switch off LED
 return ' return
 win:
