@@ -104,7 +104,7 @@ high B.0
 high B.1
 high B.2
 high B.3 ' all LEDs on
-if topstep = 1 then '2 on 7seg
+if topstep = 1 then '1 on 7seg
 high B.4
 low B.5
 low B.6
@@ -116,43 +116,43 @@ high B.5
 low B.6
 low B.7
 endif
-if topstep = 3 then '2 on 7seg
+if topstep = 3 then '3 on 7seg
 high B.4
 high B.5
 low B.6
 low B.7
 endif
-if topstep = 4 then'2 on 7seg
+if topstep = 4 then'4 on 7seg
 low B.4
 low B.5
 high B.6
 low B.7
 endif
-if topstep = 5 then '2 on 7seg
+if topstep = 5 then '5 on 7seg
 high B.4
 low B.5
 high B.6
 low B.7
 endif
-if topstep = 6 then '2 on 7seg
+if topstep = 6 then '6 on 7seg
 low B.4
 high B.5
 high B.6
 low B.7
 endif
-if topstep = 7 then '2 on 7seg
+if topstep = 7 then '7 on 7seg
 high B.4
 high B.5
 high B.6
 low B.7
 endif
-if topstep = 8 then '2 on 7seg
+if topstep = 8 then '8 on 7seg
 low B.4
 low B.5
 low B.6
 high B.7
 endif
-if topstep = 9 then '2 on 7seg
+if topstep = 9 then '9 on 7seg
 high B.4
 low B.5
 low B.6
