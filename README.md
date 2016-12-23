@@ -5,4 +5,4 @@ Simon says on the Picaxe 20M2 Microcontroller
 ![Block diagram](https://raw.github.com/jacobernst98/Elt107FinalProject/master/Images/BlockDiagram.png)
 
 ## Breadboard
-![Breadboard](https://raw.github.com/jacobernst98/Elt107FinalProject/master/Images/Wiring.png)
+![Wiring](https://raw.github.com/jacobernst98/Elt107FinalProject/master/Images/Wiring.png)
